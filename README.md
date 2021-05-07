@@ -1,10 +1,10 @@
 # DocAppoints
 **WebApp for general or specific medical appointments.**   
-Allows users to make appointments for new or registered patients, as well as modify existings appointments or delete. Users can register new doctors or patients, and make reports (future iterations). This is a final project for an school assignment.
+Allows users to make appointments for new or registered patients, as well as modify existings appointments or delete. Users can register new doctors or patients, and make reports (future iterations). This is a final project for an school assignment, currently being developed.
 
 ## Requirements for this assignment  
 * Flask / Django as web framework.
-* MySQL as databases.
+* MySQL as database.
 * Python.
 
 ## How to run
@@ -12,6 +12,17 @@ Allows users to make appointments for new or registered patients, as well as mod
 ``` git clone https://github.com/AlanHerediaG/docappoints.git ```
 2. Install dependencies  
 ``` pip install -r requirements.txt```
-3. Run the server  
+3. Create a file called '.env' on the same directory as manage.py, and write your django' SECRET_KEY  
+``` SECRET_KEY = <your_secret_key> ```
+4. Run the server  
 ``` python manage.py runserver```  
 Access the server on http://localhost:8000
+
+## Roadmap
+- [ ] Basic layout for every view.
+- [ ] Retrieve all basic entities (doctors/patients/appointments).
+- [ ] Make new appointments.
+- [ ] Register new doctors/patients.
+- [ ] Update/Delete appointments.
+- [ ] Basic reports.
+- [ ] Refresh appointments list of the day.
