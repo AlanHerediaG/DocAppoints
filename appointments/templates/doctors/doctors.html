@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Doctores</h2>
+<header>
+    <h2>Doctores</h2>
+    <a href="{% url 'registrar_doctor' %}">
+        <button type="button" class="btn btn-success">Registrar doctor</button>
+    </a>
+</header>
 <table class="table">
     <thead>
         <tr>
