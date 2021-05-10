@@ -3,7 +3,7 @@ from django.urls import path
 from appointments.views.index import index
 from appointments.views import appointments
 from appointments.views import doctors
-from appointments.views.patients import PatientListView
+from appointments.views import patients
 
 urlpatterns = [
     path('', index, name='index'),
@@ -13,5 +13,6 @@ urlpatterns = [
     path('doctores/', doctors.DoctorListView.as_view(), name='doctors'),
     path('doctores/registrar_doctor/', doctors.DoctorCreateView.as_view(), name='registrar_doctor'),
     
-    path('pacientes/', PatientListView.as_view(), name='patients'),
+    path('pacientes/', patients.PatientListView.as_view(), name='patients'),
+    path('pacientes/registrar_paciente/', patients.PatientCreateView.as_view(), name='registrar_paciente'),
 ]

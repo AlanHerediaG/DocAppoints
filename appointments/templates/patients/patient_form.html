@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 style="margin-bottom: 15px;">Registar un nuevo paciente</h3>
+<form method="POST" novalidate>
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <div class="buttons" style="margin-top: 15px;">
+        <button type="submit" class="btn btn-primary">Registar paciente</button>
+        <a href="{% url 'patients' %}">
+            <button type="button" class="btn btn-danger">Cancelar</button>
+        </a>
+    </div>
+</form>
+{% endblock %}
