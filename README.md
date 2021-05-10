@@ -19,10 +19,10 @@ Allows users to make appointments for new or registered patients, as well as mod
 Access the server on http://localhost:8000
 
 ## Roadmap
-- [ ] Basic layout for every view.
-- [ ] Retrieve all basic entities (doctors/patients/appointments).
-- [ ] Make new appointments.
-- [ ] Register new doctors/patients.
+- [x] Basic layout for every view.
+- [x] Retrieve all basic entities (doctors/patients/appointments).
+- [x] Make new appointments.
+- [x] Register new doctors/patients.
 - [ ] Update/Delete appointments.
 - [ ] Basic reports.
 - [ ] Refresh appointments list of the day.
