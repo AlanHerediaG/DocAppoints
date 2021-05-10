@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Doctores</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Clave</th>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Especialidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for doctor in object_list %}
+        <tr>
+            <td>{{ doctor.id }}</td>
+            <td>{{ doctor.name }}</td>
+            <td>{{ doctor.first_last_name }}</td>
+            <td>{{ doctor.second_last_name }}</td>
+            <td>{{ doctor.birthday }}</td>
+            <td>{{ doctor.speciality }}</td>
+        </tr>
+        {% empty %}
+        <tr></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

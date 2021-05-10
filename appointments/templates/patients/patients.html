@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Pacientes</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Clave</th>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Sexo</th>
+            <th>Fecha de Registro</th>
+            <th>Detalles</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if object_list %}
+            {% for patient in object_list %}
+                <tr>
+                    <td>{{ patient.id }}</td>
+                    <td>{{ patient.name }}</td>
+                    <td>{{ patient.first_last_name }}</td>
+                    <td>{{ patient.second_last_name }}</td>
+                    <td>{{ patient.birthday }}</td>
+                    <td>{{ patient.sex }}</td>
+                    <td>{{ patient.registry_date }}</td>
+                    <td>{{ patient.details }}</td>
+                </tr>
+            {% empty %}
+                <tr></tr>
+            {% endfor %}
+        {% else %}
+            <p>No existen pacientes registrados</p>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}
