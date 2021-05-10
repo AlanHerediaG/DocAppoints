@@ -7,7 +7,7 @@
         <button type="button" class="btn btn-success">Registrar doctor</button>
     </a>
 </header>
-<table class="table">
+<table class="table table-sm table-striped">
     <thead>
         <tr>
             <th>Clave</th>
@@ -16,6 +16,7 @@
             <th>Apellido Materno</th>
             <th>Fecha de Nacimiento</th>
             <th>Especialidad</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,14 @@
             <td>{{ doctor.second_last_name }}</td>
             <td>{{ doctor.birthday }}</td>
             <td>{{ doctor.speciality }}</td>
+            <td>
+                <a href="{% url 'editar_doctor' doctor.pk %}">
+                    <button type="button" class="btn btn-primary">Editar</button>
+                </a>
+                <a href="{% url 'eliminar_doctor' doctor.pk %}">
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                </a>
+            </td>
         </tr>
         {% empty %}
         <tr></tr>
