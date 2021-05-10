@@ -20,6 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 dotenv_file = os.path.join(BASE_DIR, '.env')
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
+else:
+    print(f"No se localizó la SECRET_KEY en {dotenv_file}")
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
@@ -124,6 +126,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'), 
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

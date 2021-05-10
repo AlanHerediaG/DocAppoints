@@ -1,27 +1,8 @@
 from django.db import models
 
-class Doctor(models.Model):
-    name             = models.CharField(max_length = 30)
-    first_last_name  = models.CharField(max_length = 30)
-    second_last_name = models.CharField(max_length = 30)
-    birthday         = models.DateTimeField()
-    speciality       = models.CharField(max_length = 100)
-
-    class Meta:
-        db_table = 'doctor'
-
-class Patient(models.Model):
-    name             = models.CharField(max_length = 30)
-    first_last_name  = models.CharField(max_length = 30)
-    second_last_name = models.CharField(max_length = 30)
-    birthday         = models.DateTimeField()
-    sex              = models.CharField(max_length = 20)
-    registry_date    = models.DateField()
-    details          = models.CharField(max_length = 200)
-
-    class Meta:
-        db_table = 'patient'
-
+from appointments.models.doctor import Doctor
+from appointments.models.patient import Patient
+#
 class AppointmentType(models.Model):
     description = models.CharField(max_length = 200)
 
