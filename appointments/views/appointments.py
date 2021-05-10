@@ -1,13 +1,19 @@
 from django.http import HttpResponseRedirect
-from django.views import generic
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView
 
 from appointments.models.appointment import Appointment
 
-class AppointmentListView(generic.ListView):
+class AppointmentListView(ListView):
     model = Appointment
     template_name = 'appointments/appointments.html'
     paginate_by = 25
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
+    def get_queryset(self):
+        return self.model.objects.all()
+
+class AppointmentCreateView(CreateView):
+    model = Appointment
+    fields = ('patient', 'doctor', 'appointment_type', 'time_slot', 'details')
+    success_url = reverse_lazy('appointments')

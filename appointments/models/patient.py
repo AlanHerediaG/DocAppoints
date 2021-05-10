@@ -11,3 +11,6 @@ class Patient(models.Model):
 
     class Meta:
         db_table = 'patient'
+
+    def __str__(self):
+        return f"{self.name} {self.first_last_name} {self.second_last_name}"

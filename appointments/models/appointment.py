@@ -9,12 +9,18 @@ class AppointmentType(models.Model):
     class Meta:
         db_table = 'appointment_type'
 
+    def __str__(self):
+        return self.description
+
 class TimeSlot(models.Model):
     start_time = models.DateTimeField()
     end_time   = models.DateTimeField()
 
     class Meta:
         db_table = 'time_slot'
+
+    def __str__(self):
+        return f"{self.start_time - self.end_time}"
 
 class Appointment(models.Model):
     patient          = models.ForeignKey(Patient,         on_delete = models.DO_NOTHING)

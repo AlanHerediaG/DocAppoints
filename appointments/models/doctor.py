@@ -9,3 +9,6 @@ class Doctor(models.Model):
 
     class Meta:
         db_table = 'doctor'
+
+    def __str__(self):
+        return f"{self.name} {self.first_last_name} {self.second_last_name}"
