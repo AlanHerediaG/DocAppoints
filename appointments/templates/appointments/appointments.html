@@ -16,6 +16,7 @@
             <th>Hora de Inicio</th>
             <th>Hora de Término</th>
             <th>Detalles</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +29,14 @@
                     <td>{{ appointment.start_time }}</td>
                     <td>{{ appointment.end_time }}</td>
                     <td>{{ appointment.details }}</td>
+                    <td>
+                        <a href="{% url 'editar_cita' appointment.pk %}">
+                            <button type="button" class="btn btn-primary">Editar</button>
+                        </a>
+                        <a href="{% url 'eliminar_cita' appointment.pk %}">
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                        </a>
+                    </td>
                 </tr>
             {% empty %}
                 <tr></tr>

@@ -13,3 +13,6 @@ class Appointment(models.Model):
 
     class Meta:
         db_table = 'appointment'
+
+    def __str__(self):
+        return f"{self.id} - {self.start_time}-{self.end_time}"

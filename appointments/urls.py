@@ -9,6 +9,8 @@ urlpatterns = [
     path('', index, name='index'),
     path('citas/', appointments.AppointmentListView.as_view(), name='appointments'),
     path('citas/agendar_cita/', appointments.AppointmentCreateView.as_view(), name='agendar_cita'),
+    path('citas/editar_cita/<int:pk>/', appointments.AppointmentUpdateView.as_view(), name='editar_cita'),
+    path('citas/eliminar_cita/<int:pk>/', appointments.AppointmentDeleteView.as_view(), name='eliminar_cita'),
 
     path('doctores/', doctors.DoctorListView.as_view(), name='doctors'),
     path('doctores/registrar_doctor/', doctors.DoctorCreateView.as_view(), name='registrar_doctor'),
