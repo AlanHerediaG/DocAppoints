@@ -15,5 +15,5 @@ class AppointmentListView(ListView):
 
 class AppointmentCreateView(CreateView):
     model = Appointment
-    fields = ('patient', 'doctor', 'appointment_type', 'time_slot', 'details')
+    fields = ('patient', 'doctor', 'appointment_type', 'start_time', 'end_time', 'details')
     success_url = reverse_lazy('appointments')

@@ -7,14 +7,14 @@
         <button type="button" class="btn btn-success">Agendar cita</button>
     </a>
 </header>
-<table class="table">
+<table class="table table-sm table-striped">
     <thead>
         <tr>
-            <th>Clave</th>
-            <th>Doctor</th>
             <th>Paciente</th>
+            <th>Doctor</th>
             <th>Tipo</th>
-            <th>Hora</th>
+            <th>Hora de Inicio</th>
+            <th>Hora de Término</th>
             <th>Detalles</th>
         </tr>
     </thead>
@@ -22,11 +22,11 @@
         {% if object_list %}
             {% for appointment in object_list %}
                 <tr>
-                    <td>{{ appointment.id }}</td>
                     <td>{{ appointment.patient }}</td>
                     <td>{{ appointment.doctor }}</td>
                     <td>{{ appointment.appointment_type }}</td>
-                    <td>{{ appointment.time_slot }}</td>
+                    <td>{{ appointment.start_time }}</td>
+                    <td>{{ appointment.end_time }}</td>
                     <td>{{ appointment.details }}</td>
                 </tr>
             {% empty %}

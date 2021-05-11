@@ -10,7 +10,6 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Clave</th>
             <th>Nombre</th>
             <th>Apellido Paterno</th>
             <th>Apellido Materno</th>
@@ -25,7 +24,6 @@
         {% if object_list %}
             {% for patient in object_list %}
                 <tr>
-                    <td>{{ patient.id }}</td>
                     <td>{{ patient.name }}</td>
                     <td>{{ patient.first_last_name }}</td>
                     <td>{{ patient.second_last_name }}</td>
